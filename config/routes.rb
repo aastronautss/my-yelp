@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
+  root to: 'businesses#index'
 
-  get 'home', to: 'pages#home'
+  get 'home', to: 'businesses#index'
 
   get 'register', to: 'users#new'
   get 'login', to: 'sessions#new'
@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   resources 'users', only: [:create]
+  resources 'businesses', only: [:show]
 end
