@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
 gem 'turbolinks'
 gem 'autoprefixer-rails'
 

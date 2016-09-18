@@ -1,5 +1,5 @@
 class BusinessesController < ApplicationController
   def index
-    @businesses = Business.all
+    @businesses = Business.paginate page: params[:page]
   end
 end
