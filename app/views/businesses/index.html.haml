@@ -1,3 +1,6 @@
+= render 'shared/content_header', title: 'Businesses'
+
+
 %ul
   = render @businesses
   .text-center= will_paginate @businesses, renderer: BootstrapPagination::Rails
