@@ -1,0 +1,8 @@
+.col-md-4.col-md-offset-4
+  = bootstrap_form_for @user do |f|
+    = f.email_field :email
+    = f.password_field :password
+    = f.password_field :password_confirmation, label: 'Password Confirmation'
+    = f.text_field :first_name, label: 'First Name'
+    = f.text_field :last_name, label: 'Last Name'
+    = f.submit "Register", class: 'btn btn-primary btn-block'
