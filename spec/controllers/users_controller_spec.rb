@@ -1,6 +1,20 @@
 require 'rails_helper'
 
 describe UsersController do
+  describe 'GET show' do
+    let(:action) { get :show, id: Fabricate(:user).id }
+
+    it 'sets @user' do
+      action
+      expect(assigns(:user)).to be_present
+    end
+
+    it 'renders :show' do
+      action
+      expect(response).to render_template(:show)
+    end
+  end
+
   describe 'GET new' do
     let(:action) { get :new }
 

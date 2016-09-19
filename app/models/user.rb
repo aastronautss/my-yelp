@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  has_many :reviews, dependent: :destroy
+  has_many :reviews, -> { order 'created_at DESC' }, dependent: :destroy
 
   validates_presence_of :email
   validates_presence_of :first_name
