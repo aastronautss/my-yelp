@@ -5,6 +5,7 @@
     .nav.navbar-nav
     .nav.navbar-nav.navbar-right
       - if logged_in?
+        = link_to 'Add a Business', new_business_path, class: 'btn btn-primary navbar-btn'
         = link_to 'Logout', logout_path, method: :delete, class: 'btn btn-default navbar-btn'
       - else
         = link_to 'Login', login_path, class: 'btn btn-default navbar-btn'

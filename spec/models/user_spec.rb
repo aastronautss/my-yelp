@@ -11,4 +11,8 @@ describe User do
 
     it { should validate_uniqueness_of(:email).case_insensitive }
   end
+
+  context 'associations' do
+    it { should have_many(:reviews).dependent(:destroy) }
+  end
 end

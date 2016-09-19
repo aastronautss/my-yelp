@@ -1,0 +1,8 @@
+%li
+  %hr
+  %p= star_rating(review.rating)
+  - review.body.split("\n\n").each do |paragraph|
+    %p= paragraph
+  %p
+    = "By #{link_to review.user.full_name, review.user}".html_safe
+    %small= "on #{format_date(review.created_at)}"

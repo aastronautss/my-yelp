@@ -12,3 +12,14 @@
   .col-md-4
     - @business.description.split("\n\n").each do |paragraph|
       %p= paragraph
+- if logged_in?
+  .row
+    .col-md-8
+      %h3= "Leave a review"
+      = render 'reviews/form'
+.row
+  .col-md-8
+    %h3= "Reviews (#{@business.review_count})"
+    %ul
+      = render @reviews
+      .text-center= will_paginate @reviews, renderer: BootstrapPagination::Rails
