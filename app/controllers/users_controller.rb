@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
-  before_action :require_logged_out
+  before_action :require_logged_out, only: [:create, :new]
+
+  def show
+    @user = User.find params[:id]
+    @reviews = @user.reviews.paginate page: params[:page]
+  end
 
   def new
     @user = User.new
