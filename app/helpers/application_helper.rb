@@ -17,4 +17,8 @@ module ApplicationHelper
       (stars + blanks).html_safe
     end
   end
+
+  def format_date(dt)
+    dt.strftime("%m/%d/%Y %l:%M%P %Z")
+  end
 end

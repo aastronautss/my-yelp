@@ -21,4 +21,5 @@
   .col-md-8
     %h3= "Reviews (#{@business.review_count})"
     %ul
-      = render @business.reviews
+      = render @reviews
+      .text-center= will_paginate @reviews, renderer: BootstrapPagination::Rails
