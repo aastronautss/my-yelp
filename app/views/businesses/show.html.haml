@@ -12,3 +12,8 @@
   .col-md-4
     - @business.description.split("\n\n").each do |paragraph|
       %p= paragraph
+.row
+  .col-md-8
+    %h3 Reviews
+    %ul
+      = render @business.reviews

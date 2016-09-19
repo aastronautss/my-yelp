@@ -5,7 +5,7 @@ class Business < ActiveRecord::Base
 
   self.per_page = 10
 
-  def rating # TODO
+  def rating
     ratings = reviews.map &:rating
     return nil if ratings.empty?
     ratings.inject { |sum, el| sum + el }.to_f / ratings.length

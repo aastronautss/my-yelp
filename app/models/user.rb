@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   validates_presence_of :last_name
 
   validates_uniqueness_of :email, case_sensitive: false
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
