@@ -26,6 +26,11 @@ describe BusinessesController do
       expect(assigns(:business)).to eq(@business)
     end
 
+    it 'sets @review' do
+      expect(assigns(:review)).to be_new_record
+      expect(assigns(:review)).to be_instance_of(Review)
+    end
+
     it 'renders :show' do
       expect(response).to render_template(:show)
     end

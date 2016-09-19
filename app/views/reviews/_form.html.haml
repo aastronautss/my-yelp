@@ -1,0 +1,9 @@
+= form_for [@business, @review] do |f|
+  = render 'shared/form_errors', obj: @review
+  .form-group
+    = f.label :rating
+    = f.select :rating, options_for_select((1..5).map { |val| ["#{val} #{'star'.pluralize(val)}", val] }), {}, class: 'form-control'
+  .form-group
+    = f.text_area :body, class: 'form-control', rows: 6
+  .form-group
+    = f.submit 'Submit', class: 'btn btn-primary'

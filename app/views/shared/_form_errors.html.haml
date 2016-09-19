@@ -1,0 +1,7 @@
+- if obj.errors.any?
+  .alert.alert-danger
+    There were some errors submitting your review:
+    %ul
+      - obj.errors.full_messages.each do |m|
+        %li= m
+

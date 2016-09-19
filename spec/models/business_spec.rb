@@ -27,22 +27,22 @@ describe Business do
       let(:business) { Fabricate :business }
 
       it 'returns an average of one review' do
-        Fabricate :review, business: business, rating: 4
+        Fabricate :review, business: business, rating: 4, user: Fabricate(:user)
 
         expect(business.rating).to eq(4)
       end
 
       it 'returns an average of two reviews' do
-        Fabricate :review, business: business, rating: 4
-        Fabricate :review, business: business, rating: 5
+        Fabricate :review, business: business, rating: 4, user: Fabricate(:user)
+        Fabricate :review, business: business, rating: 5, user: Fabricate(:user)
 
         expect(business.rating).to eq(4.5)
       end
 
       it 'returns an average of three reviews' do
-        Fabricate :review, business: business, rating: 3
-        Fabricate :review, business: business, rating: 4
-        Fabricate :review, business: business, rating: 5
+        Fabricate :review, business: business, rating: 3, user: Fabricate(:user)
+        Fabricate :review, business: business, rating: 4, user: Fabricate(:user)
+        Fabricate :review, business: business, rating: 5, user: Fabricate(:user)
 
         expect(business.rating).to eq(4)
       end

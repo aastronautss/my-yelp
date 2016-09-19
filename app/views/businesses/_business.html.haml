@@ -1,4 +1,6 @@
-%li.well
-  -# .pull-right Test
+%li
   %h4= link_to business.name.titleize, business
   %p= "#{business.city}, #{business.state}"
+  %p= star_rating business.rating
+  %p= "#{business.review_count} reviews"
+  %hr
