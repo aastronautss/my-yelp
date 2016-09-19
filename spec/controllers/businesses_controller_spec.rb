@@ -15,4 +15,19 @@ describe BusinessesController do
       expect(response).to render_template(:index)
     end
   end
+
+  describe 'GET show' do
+    before do
+      @business = Fabricate :business
+      get :show, id: @business.id
+    end
+
+    it 'sets @business' do
+      expect(assigns(:business)).to eq(@business)
+    end
+
+    it 'renders :show' do
+      expect(response).to render_template(:show)
+    end
+  end
 end

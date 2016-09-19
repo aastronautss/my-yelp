@@ -1,3 +1,3 @@
-15.times { Fabricate :user }
+20.times { Fabricate :user }
 
 100.times { Fabricate :business }

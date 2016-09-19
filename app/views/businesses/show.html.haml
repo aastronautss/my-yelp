@@ -1,0 +1,14 @@
+= render 'shared/content_header', title: @business.name.titleize
+
+.row
+  .col-md-4
+    %p= star_rating(@business.rating)
+    %p
+      = @business.address
+      %br
+      = "#{@business.city}, #{@business.state} #{@business.zip}"
+    %p= @business.phone
+    %p= link_to format_link(@business.website_url), fix_url(@business.website_url)
+  .col-md-4
+    - @business.description.split("\n\n").each do |paragraph|
+      %p= paragraph

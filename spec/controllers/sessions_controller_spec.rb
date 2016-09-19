@@ -41,6 +41,23 @@ describe SessionsController do
         expect(response).to redirect_to(login_path)
       end
     end
+
+    context 'with no user record found' do
+      let(:user) { Fabricate :user }
+      before { post :create, email: '', password: 'doesntmatter' }
+
+      it 'does not add a user to the session' do
+        expect(current_user).to be_nil
+      end
+
+      it 'sets the flash' do
+        expect(flash[:danger]).to be_present
+      end
+
+      it 'redirects to the login path' do
+        expect(response).to redirect_to(login_path)
+      end
+    end
   end
 
   describe 'DELETE destroy' do
