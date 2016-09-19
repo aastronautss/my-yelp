@@ -1,0 +1,11 @@
+.col-md-4.col-md-offset-4
+  = bootstrap_form_for @business do |f|
+    = f.text_field :name
+    = f.text_field :address
+    = f.text_field :city
+    = f.text_field :state
+    = f.text_field :zip
+    = f.text_field :phone
+    = f.text_field :website_url, label: 'Website'
+    = f.text_area :description, rows: 6
+    = f.submit 'Add Business', class: 'btn btn-primary btn-block'
